@@ -19,12 +19,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   
     @IBOutlet weak var tableview: UITableView!
     
+    var currentWeather = CurrrentWeather()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.delegate = self
         tableview.dataSource = self
-        print(CURENT_URL)
+        
+        currentWeather.downloadWeatherDetails {
+            //Setup to load UI download data
+            
+        }
+        
+        //print(CURENT_URL)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
