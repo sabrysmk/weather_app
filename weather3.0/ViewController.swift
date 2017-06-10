@@ -24,6 +24,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         tableview.delegate = self
         tableview.dataSource = self
+        print(CURENT_URL)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
