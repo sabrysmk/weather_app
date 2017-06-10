@@ -12,7 +12,7 @@ import Alamofire
 class CurrrentWeather {
     var _cityname: String!
     var _date: String!
-    var _weathetype: String!
+    var _weathertype: String!
     var _currenttemp: Double!
     
     var cityname: String {
@@ -36,10 +36,10 @@ class CurrrentWeather {
     }
     
     var weathertype: String {
-        if _weathetype == nil {
-            _weathetype = ""
+        if _weathertype == nil {
+            _weathertype = ""
         }
-        return _weathetype
+        return _weathertype
     }
     
     var currenttemp: Double {
@@ -54,7 +54,35 @@ class CurrrentWeather {
         let currentWeatherUrl = URL(string: CURENT_URL)!
         Alamofire.request(currentWeatherUrl).responseJSON { response in
             let result = response.result
-            print(response)
+            
+            
+            if let dict = result.value as? Dictionary<String, AnyObject> {
+                
+                if let name = dict["name"] as? String {
+                    self._cityname = name.capitalized
+                    print(self._cityname)
+                }
+                
+                if let weather = dict["weather"] as? [Dictionary<String, AnyObject>] {
+                    if let main = weather[0]["main"] as? String {
+                        self._weathertype = main.capitalized
+                        print(self._weathertype)
+                    }
+                }
+                
+                if let main = dict["main"] as? Dictionary<String, AnyObject> {
+                    
+                    if let currenttemp = main["temp"] as? Double {
+                        
+                        let KalvinToCelciusPredevision = (currenttemp * (9/5) - 495.67)
+                        
+                        let KalvinToCelcius = Double(round(10 * KalvinToCelciusPredevision/10))
+                        
+                        self._currenttemp = KalvinToCelcius
+                        print(self._currenttemp)
+                    }
+                }
+            }
         }
         completed()
     }
