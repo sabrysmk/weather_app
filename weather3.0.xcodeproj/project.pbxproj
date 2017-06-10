@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F5DCAB91EEC028A00F3EA42 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DCAB81EEC028A00F3EA42 /* Constants.swift */; };
+		1F5DCABB1EEC10D600F3EA42 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DCABA1EEC10D600F3EA42 /* CurrentWeather.swift */; };
 		1F95F8301EEAB09B00100AA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F95F82F1EEAB09B00100AA9 /* AppDelegate.swift */; };
 		1F95F8321EEAB09B00100AA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F95F8311EEAB09B00100AA9 /* ViewController.swift */; };
 		1F95F8351EEAB09B00100AA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F95F8331EEAB09B00100AA9 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		1F5DCAB81EEC028A00F3EA42 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1F5DCABA1EEC10D600F3EA42 /* CurrentWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		1F95F82C1EEAB09A00100AA9 /* weather3.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weather3.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F95F82F1EEAB09B00100AA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F95F8311EEAB09B00100AA9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				1F95F8381EEAB09B00100AA9 /* LaunchScreen.storyboard */,
 				1F95F83B1EEAB09B00100AA9 /* Info.plist */,
 				1F5DCAB81EEC028A00F3EA42 /* Constants.swift */,
+				1F5DCABA1EEC10D600F3EA42 /* CurrentWeather.swift */,
 			);
 			path = weather3.0;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			files = (
 				1F95F8321EEAB09B00100AA9 /* ViewController.swift in Sources */,
 				1F95F8301EEAB09B00100AA9 /* AppDelegate.swift in Sources */,
+				1F5DCABB1EEC10D600F3EA42 /* CurrentWeather.swift in Sources */,
 				1F5DCAB91EEC028A00F3EA42 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
