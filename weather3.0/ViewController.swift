@@ -19,13 +19,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   
     @IBOutlet weak var tableview: UITableView!
     
-    var currentWeather = CurrrentWeather()
+    var currentWeather = CurrentWeather()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.delegate = self
         tableview.dataSource = self
+        
         
         currentWeather.downloadWeatherDetails {
             //Setup to load UI download data
@@ -55,11 +56,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func updateMainUi() {
         datelbl.text = currentWeather.date
-        templbl.text = "\(currentWeather.currenttemp)"
-        typelbl.text = currentWeather.weathertype
+        templbl.text = String(format: "%.0f", currentWeather.currentTemp)
+        //templbl.text = "\(currentWeather.currentTemp)"
+        typelbl.text = currentWeather.weatherType
         print(typelbl)
-        citylbl.text = currentWeather.cityname
-        weatherimage.image = UIImage (named: currentWeather.weathertype)
+        citylbl.text = currentWeather.cityName
+        weatherimage.image = UIImage (named: currentWeather.weatherType)
     }
 
 
