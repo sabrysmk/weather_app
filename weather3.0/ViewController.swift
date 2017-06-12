@@ -19,7 +19,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   
     @IBOutlet weak var tableview: UITableView!
     
-    var currentWeather = CurrentWeather()
+    var currentWeather: CurrentWeather!
+    var forecast: Forecast!
     
     
     override func viewDidLoad() {
@@ -27,16 +28,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableview.delegate = self
         tableview.dataSource = self
         
+        currentWeather = CurrentWeather()
+        forecast = Forecast()
+        
         
         currentWeather.downloadWeatherDetails {
             //Setup to load UI download data
             self.updateMainUi()
-            
-            
         }
         
-        //print(CURENT_URL)
-        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func downloadForecastData(completed: DownloadComplete) {
+        //Downloading foreacast data to tableview
+       // let fore
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
